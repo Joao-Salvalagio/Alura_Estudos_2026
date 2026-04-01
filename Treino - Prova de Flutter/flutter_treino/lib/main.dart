@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_treino/exc1_pecas.dart';
 import 'package:flutter_treino/exc2_alunos.dart';
 import 'package:flutter_treino/exc3_livros.dart';
+import 'package:flutter_treino/exc4_voo.dart';
 
 void main() {
   runApp(const MyApp());
@@ -17,7 +18,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         colorScheme: .fromSeed(seedColor: Colors.deepPurple),
       ),
-      home: LivroScreen(),
+      home: VooScreen(),
     );
   }
 }
