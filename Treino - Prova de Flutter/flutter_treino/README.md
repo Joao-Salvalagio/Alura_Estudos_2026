@@ -1,4 +1,4 @@
-# flutter_exc1
+# flutter_treino
 
 A new Flutter project.
 
