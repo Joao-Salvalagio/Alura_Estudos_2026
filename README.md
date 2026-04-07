@@ -1,4 +1,4 @@
-# 📚 Alura_Estudos_2026
+# 📚 Estudos_2026
 
 > Repositório pessoal dedicado aos meus estudos ao longo de 2026 - João Miguel Silva Salvalagio.
 
