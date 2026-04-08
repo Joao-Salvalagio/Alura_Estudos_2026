@@ -1,0 +1,32 @@
+<div class="container mt-4 mb-5">
+  <h3>Gestão de Donos</h3>
+
+  <div class="d-flex gap-2 mb-3">
+    <input class="form-control" placeholder="Nome" [(ngModel)]="dono.nome">
+    <input class="form-control" placeholder="CPF" [(ngModel)]="dono.cpf">
+    <input type="number" class="form-control" placeholder="Idade" [(ngModel)]="dono.idade">
+    <button class="btn btn-primary" (click)="salvar()">Salvar</button>
+  </div>
+
+  <table class="table table-bordered">
+    <thead class="table-dark">
+    <tr>
+      <th>ID</th><th>Nome</th><th>CPF</th><th>Idade</th><th>Ações</th>
+    </tr>
+    </thead>
+    <tbody>
+      @for (d of donos; track d.id) {
+        <tr>
+          <td>{{ d.id }}</td>
+          <td>{{ d.nome }}</td>
+          <td>{{ d.cpf }}</td>
+          <td>{{ d.idade }}</td>
+          <td>
+            <button class="btn btn-sm btn-warning me-2" (click)="editar(d)">Editar</button>
+            <button class="btn btn-sm btn-danger" (click)="deletar(d.id)">X</button>
+          </td>
+        </tr>
+      }
+    </tbody>
+  </table>
+</div>
