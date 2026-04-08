@@ -1,0 +1,41 @@
+<div class="container mt-4">
+  <h3>Gestão de Carros</h3>
+
+  <div class="d-flex gap-2 mb-3">
+    <input class="form-control" placeholder="Modelo do Carro" [(ngModel)]="carro.nome">
+    <input class="form-control" placeholder="Marca" [(ngModel)]="carro.marca">
+    <input class="form-control" placeholder="Placa" [(ngModel)]="carro.placa">
+
+    <select class="form-select" [(ngModel)]="carro.dono.id">
+      <option value="undefined" disabled selected>Selecione um Dono</option>
+      @for (d of donos; track d.id) {
+        <option [value]="d.id">{{ d.nome }}</option>
+      }
+    </select>
+
+    <button class="btn btn-primary" (click)="salvar()">Salvar</button>
+  </div>
+
+  <table class="table table-bordered">
+    <thead class="table-dark">
+    <tr>
+      <th>ID</th><th>Carro</th><th>Marca</th><th>Placa</th><th>Dono Atual</th><th>Ações</th>
+    </tr>
+    </thead>
+    <tbody>
+      @for (c of carros; track c.id) {
+        <tr>
+          <td>{{ c.id }}</td>
+          <td>{{ c.nome }}</td>
+          <td>{{ c.marca }}</td>
+          <td>{{ c.placa }}</td>
+          <td>{{ c.dono?.nome }}</td>
+          <td>
+            <button class="btn btn-sm btn-warning me-2" (click)="editar(c)">Editar</button>
+            <button class="btn btn-sm btn-danger" (click)="deletar(c.id)">X</button>
+          </td>
+        </tr>
+      }
+    </tbody>
+  </table>
+</div>

@@ -22,6 +22,5 @@ public class CarroModel {
 
     @ManyToOne //muitos pra um
     @JoinColumn(name = "id_dono") //adicionando dono_id na coluna
-    @JsonIgnore //ignora no requestbody
     private DonoModel dono;
 }
